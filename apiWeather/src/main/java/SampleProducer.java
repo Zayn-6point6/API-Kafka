@@ -21,13 +21,12 @@ public class SampleProducer {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         //Create Producer Record
-        ProducerRecord<String, String> record = new ProducerRecord<String,String>("weather_topic", "17:15");
+        ProducerRecord<String, String> record = new ProducerRecord<String,String>("weather_topic", "17:29");
 
         //Send data - asynchronous
         producer.send(record);
         producer.flush(); //flush data
         producer.close(); //flush data and close producer
-
 
     }
 }

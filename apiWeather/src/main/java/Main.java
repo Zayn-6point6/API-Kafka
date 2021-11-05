@@ -7,6 +7,6 @@ public class Main {
 
         SampleProducer sampleProducer = new SampleProducer("hi");
 
-
+        System.out.println("main");
     }
 }

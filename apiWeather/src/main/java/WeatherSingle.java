@@ -6,13 +6,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class WeatherSingleCountry {
+public class WeatherSingle {
     public static String doHttpGet(){
 
         try {
 
             String apiKey = "3cb3858daf95395c68d867b887ccc8f3";
-            URL url = new URL("http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=" + apiKey);
+            String urlString = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=";
+            URL url = new URL(urlString + apiKey);
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -45,10 +46,10 @@ public class WeatherSingleCountry {
                 JSONObject obj = (JSONObject) data_obj.get("city");
 
                 //Get the required data using its key
-                System.out.println("country from weatherTwo file: " + obj.get("country"));
+                System.out.println("country from WeatherSingle: " + obj.get("country"));
 
                 String country = obj.get("country").toString();
-                System.out.println("country from weatherTwo file: " + country);
+                System.out.println("country from WeatherSingle: " + country);
 
                 System.out.println(data_obj);
 
@@ -58,7 +59,7 @@ public class WeatherSingleCountry {
 
                     JSONObject new_obj = (JSONObject) arr.get(i);  //creates new object every iteration
 
-                    long dt = 1636372800;
+                    long dt = 1636383600; //this changes all the time, make sure its up to date
                     if (new_obj.get("dt").equals(dt)) {     //where new object creates specified parameter do the following
 
                         JSONObject obj_main = (JSONObject) new_obj.get("main");  //creates final object when new_obj = "main"

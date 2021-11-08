@@ -19,7 +19,7 @@ import java.lang.reflect.Array;
 
 import java.io.IOException;
 
-public class Weather {
+public class WeatherBasic {
     public static void doHttpGet() {
 
         String apiKey = "3cb3858daf95395c68d867b887ccc8f3";

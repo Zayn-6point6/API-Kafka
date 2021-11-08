@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        Weather.doHttpGet();
 
-        //String weather = new String();
-        //weather = Weather.doHttpGet();
+        String apiOutput = WeatherSingleCountry.doHttpGet();
 
-        SampleProducer sampleProducer = new SampleProducer("hi");
+        System.out.println("country from main file: " + apiOutput);
 
-
+        SampleProducer sampleProducer = new SampleProducer(apiOutput);
     }
+
+
 }

@@ -7,9 +7,9 @@ import java.util.Properties;
 
 public class SampleProducer {
 
-    public SampleProducer(String hello) {
+    public SampleProducer(String input) {
 
-        System.out.println(hello);
+        System.out.println(input);
 
         String bootstrapServer = "localhost:9092";
         Properties properties = new Properties();
@@ -21,10 +21,13 @@ public class SampleProducer {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         //Create Producer Record
-        ProducerRecord<String, String> record = new ProducerRecord<String,String>("weather_topic", "17:15");
+        ProducerRecord<String, String> record = new ProducerRecord<String,String>("weather_topic", input);
+        ProducerRecord<String, String> record2 = new ProducerRecord<String,String>("weather_topic", "country: " + input);
+
 
         //Send data - asynchronous
         producer.send(record);
+        producer.send(record2);
         producer.flush(); //flush data
         producer.close(); //flush data and close producer
 

@@ -9,7 +9,8 @@ public class Main {
 
         //WeatherMultiple.doHttpGet();
 
-        TemperatureUsingHttpFunction.getTemp();
+        int city_ID = 524901;
+        TemperatureUsingHttpFunction.getTemp(city_ID);
 
 
     }

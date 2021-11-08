@@ -8,8 +8,10 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class TemperatureUsingHttpFunction {
-    public static String getTemp(){
-        JSONObject data_obj = HttpGetFunction.doHttpGet();
+
+
+    public static String getTemp(int cityID){
+        JSONObject data_obj = HttpGetFunction.doHttpGet(cityID);
 
         System.out.println("JSON:");
         System.out.println(data_obj);
@@ -29,6 +31,9 @@ public class TemperatureUsingHttpFunction {
             System.out.println("temp: " + obj_main.get("temp"));  //prints from final object
             System.out.println("feels_like: " + obj_main.get("feels_like"));
             System.out.println();
+
+
+
         }
 
         return null;

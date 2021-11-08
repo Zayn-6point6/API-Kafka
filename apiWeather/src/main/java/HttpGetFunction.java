@@ -7,12 +7,12 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class HttpGetFunction {
-    public static JSONObject doHttpGet(){
+    public static JSONObject doHttpGet(int cityID){
 
         try {
 
             String apiKey = "3cb3858daf95395c68d867b887ccc8f3";
-            String urlString = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=";
+            String urlString = "http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=";
             URL url = new URL(urlString + apiKey);
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();

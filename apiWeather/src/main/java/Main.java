@@ -14,9 +14,10 @@ public class Main {
         int city_ID = 524901;
         Map apiOutput = TemperatureUsingHttpFunction.getTemp(city_ID);
         System.out.println(apiOutput);
-        SampleProducerString sampleProducer = new SampleProducerString(apiOutput.toString());
+        //SampleProducerString sampleProducerString = new SampleProducerString(apiOutput.toString());
+        //SampleProducerMap sampleProducerMap = new SampleProducerMap(apiOutput);
 
-
+        ApiMapOutput.splitMap(apiOutput.toString());
     }
 
 

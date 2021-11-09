@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -10,7 +12,9 @@ public class Main {
         //WeatherMultiple.doHttpGet();
 
         int city_ID = 524901;
-        TemperatureUsingHttpFunction.getTemp(city_ID);
+        Map apiOutput = TemperatureUsingHttpFunction.getTemp(city_ID);
+        System.out.println(apiOutput);
+        SampleProducerString sampleProducer = new SampleProducerString(apiOutput.toString());
 
 
     }

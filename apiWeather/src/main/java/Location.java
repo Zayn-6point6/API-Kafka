@@ -35,25 +35,25 @@ public class Location {
 
 
 
-        Location location = new Location(country, city, latitude, longitude);
+        Location location = new Location(country, city, latitude, longitude); //creating location object and populating it with the correct values
         /*getCountry(location);
         getCity(location);
         getLat(location);
         getLong(location);*/
 
-        ArrayList<String> temp = new ArrayList<String>();
+        ArrayList<String> countryInfo = new ArrayList<String>(); //creating a list
 
-        temp.add(getCountry(location));
-        temp.add(getCity(location));
-        temp.add(getLat(location));
-        temp.add(getLong(location));
+        countryInfo.add(getCountry(location));  //adding items in the list using getFunction
+        countryInfo.add(getCity(location));
+        countryInfo.add(getLat(location));
+        countryInfo.add(getLong(location));
 
-        System.out.println("Country: " + temp.get(0));
-        System.out.println("City: " + temp.get(1));
-        System.out.println("Lat: " + temp.get(2));
-        System.out.println("Long: " + temp.get(3));
+        System.out.println("Country: " + countryInfo.get(0));
+        System.out.println("City: " + countryInfo.get(1));
+        System.out.println("Lat: " + countryInfo.get(2));
+        System.out.println("Long: " + countryInfo.get(3));
 
-        return temp;
+        return countryInfo;
     }
 
 

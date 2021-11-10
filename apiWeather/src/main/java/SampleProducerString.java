@@ -9,7 +9,7 @@ public class SampleProducerString {
 
     public SampleProducerString(String input) {
 
-        System.out.println(input);
+        System.out.println("\nSending to Kafka:");
 
         String bootstrapServer = "localhost:9092";
         Properties properties = new Properties();

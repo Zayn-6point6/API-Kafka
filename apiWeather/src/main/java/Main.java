@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Main {
@@ -12,13 +13,21 @@ public class Main {
         //WeatherMultiple.doHttpGet();
 
         int city_ID = 524901;
+        ArrayList country = Location.getInfo(524901);
+        //System.out.println(country);
+
+
         Map apiOutput = TemperatureUsingHttpFunction.getTemp(city_ID);
-        System.out.println(apiOutput);
+        //System.out.println(apiOutput);
         //SampleProducerString sampleProducerString = new SampleProducerString(apiOutput.toString());
         //SampleProducerMap sampleProducerMap = new SampleProducerMap(apiOutput);
 
         ApiMapOutput.splitMap(apiOutput.toString());
+
+
+
+
+
+
     }
-
-
 }

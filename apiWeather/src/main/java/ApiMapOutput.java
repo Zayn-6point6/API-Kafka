@@ -18,9 +18,8 @@ public class ApiMapOutput {
         //System.out.println(inputSplit[0]);
 
         for (int i = 0; i < inputSplit.length; i++) {
-            System.out.println(inputSplit[i]);
+            //System.out.println(inputSplit[i]);
         }
-
 
         return null;
     }

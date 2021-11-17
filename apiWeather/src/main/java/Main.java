@@ -10,11 +10,6 @@ public class Main {
         int cityID = 524901;
         ArrayList country = Location.getInfo(cityID);
 
-        Map apiOutputMap = DateTempAndFeelsLike.getWeatherMap(cityID);
-        System.out.println("Data & Temp - MAP Format:");
-        System.out.println(apiOutputMap);
-        System.out.println("");
-
         List apiOutputList = DateTempAndFeelsLike.getWeatherList(cityID);
         System.out.println("Date, Temp & Feels like - List of Lists Format:");
         System.out.println("Date & Time: "  + apiOutputList.get(0));
@@ -32,7 +27,7 @@ public class Main {
 
 
 
-        SampleProducerString producerBlankLines = new SampleProducerString("--\n--\n--\n");  //just to see records clearer in terminal
+        //SampleProducerString producerBlankLines = new SampleProducerString("--\n--\n--\n");  //just to see records clearer in terminal
 
     }
 }

@@ -37,7 +37,7 @@ public class Consumer {
 
         List<String> recordList = new ArrayList<>();
         //Poll for new data
-        while(recordList.size()<=4){
+        while(recordList.size()<=3){
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
 
             for(ConsumerRecord<String, String> record : records){

@@ -20,7 +20,9 @@ public class Main {
         System.out.println("Producer Write");
         SampleProducerString weatherDates = new SampleProducerString(apiOutputList.get(0).toString()); //sending date and time of forecast
         SampleProducerString weatherTemp = new SampleProducerString(apiOutputList.get(1).toString());
-        SampleProducerString weatherFeelsLike = new SampleProducerString(apiOutputList.get(0).toString());
+        SampleProducerString weatherFeelsLike = new SampleProducerString(apiOutputList.get(2).toString());
+
+
 
         //JSONObject data_obj = HttpGetFunction.doHttpGet(cityID);
         //SampleProducerString sampleProducerString = new SampleProducerString(data_obj.toJSONString()); //sending entire API's JSON
@@ -28,6 +30,5 @@ public class Main {
 
 
         //SampleProducerString producerBlankLines = new SampleProducerString("--\n--\n--\n");  //just to see records clearer in terminal
-
     }
 }

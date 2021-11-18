@@ -10,6 +10,11 @@ public class ToPostgresFromConsumer {
         List<String>  consumerOutput = new ArrayList<>();
         consumerOutput = Consumer.consumer();
 
+        String[] dates = SplitString.splitString(consumerOutput.get(0));
+        String[] temps = SplitString.splitString(consumerOutput.get(1));
+        String[] feels_like = SplitString.splitString(consumerOutput.get(2));
+
+
 
         String jdbcURL = "jdbc:postgresql://localhost:5432/firstPostgres";
         String username = "postgres";
@@ -25,31 +30,18 @@ public class ToPostgresFromConsumer {
             PreparedStatement statement = connection.prepareStatement(sql);
 
             int count = 0;
-            for (int i = 0; i < consumerOutput.size(); i++) {
-                    statement.setString(1, consumerOutput.get(i));
-                    statement.setString(2, consumerOutput.get(i));
-                    statement.setString(3, consumerOutput.get(i));
-
-                int rows = statement.executeUpdate();
-                    if (rows > 0){
-                        System.out.println("A new row has been created");
-                    }
-                    count++;
-            }
-            System.out.println("Number of rows created: "+count);
-
-
-            /*for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 5; j++) {
-                    statement.setString(1, consumerOutput.get(i));
-                    statement.setString(2, consumerOutput.get(i));
+            for (int i = 0; i < dates.length; i++) {
+                    statement.setString(1, dates[i]);
+                    statement.setString(2, temps[i]);
+                    statement.setString(3, feels_like[i]);
 
                     int rows = statement.executeUpdate();
-                    if (rows > 0){
+                    /*if (rows > 0){
                         System.out.println("A new row has been created");
-                    }
-                }
-            }*/
+                    }*/
+                    count++;
+            }
+            System.out.println("Number of rows created: " + count);
 
 
             connection.close();
@@ -58,7 +50,5 @@ public class ToPostgresFromConsumer {
             System.out.println("error connecting to postgres server");
             e.printStackTrace();
         }
-
-
     }
 }

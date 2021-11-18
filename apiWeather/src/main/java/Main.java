@@ -1,8 +1,5 @@
-import org.json.simple.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +13,10 @@ public class Main {
         System.out.println("Temp:        "  + apiOutputList.get(1));
         System.out.println("Feels Like:  "  + apiOutputList.get(2));
 
+        System.out.println(apiOutputList.get(0).getClass());
+
+        System.out.println();
+        SplitString.splitString(apiOutputList.get(2).toString());
 
         System.out.println("Producer Write");
         SampleProducerString weatherDates = new SampleProducerString(apiOutputList.get(0).toString()); //sending date and time of forecast
